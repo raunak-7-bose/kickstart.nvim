@@ -192,13 +192,12 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- custom options
 vim.opt.expandtab = true
-
 vim.opt.shiftwidth = 2
-
 vim.opt.tabstop = 2
 
-vim.opt.textwidth = 70
+vim.opt.textwidth = 80
 vim.opt.wrapmargin = 0
+vim.opt.linebreak = true
 
 vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 4
