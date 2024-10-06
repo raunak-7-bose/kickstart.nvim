@@ -202,7 +202,7 @@ vim.opt.linebreak = true
 vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 0
 vim.g.netrw_altv = 1
-vim.g.netrw_liststyle = 3
+vim.g.netrw_liststyle = 0
 
 if vim.g.neovide then
   vim.o.guifont = 'CaskaydiaCove Nerd Font:h20'
