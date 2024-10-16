@@ -11,10 +11,12 @@ return {
   },
   cmd = 'Neotree',
   keys = {
-    { '\\', ':Neotree reveal bottom<CR>', { desc = 'NeoTree reveal' } },
+    { '\\', ':Neotree position=current<CR>', { desc = 'NeoTree position=current' } },
   },
   opts = {
     filesystem = {
+      hijack_netrw_behaviour = 'open_current',
+
       window = {
         mappings = {
           ['\\'] = 'close_window',
