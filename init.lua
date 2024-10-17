@@ -195,9 +195,7 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 
-vim.opt.textwidth = 80
-vim.opt.wrapmargin = 0
-vim.opt.linebreak = true
+vim.g['pencil#textwidth'] = 80
 
 vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 0
