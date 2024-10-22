@@ -1,0 +1,8 @@
+Hello, this is my first time writing on vim to what I assume is a text file. lets see how this goes
+
+I found a tutorial for Vim, it has taken me through navigation and alot of other things involving
+deletion and the sort
+
+I am considering neovim for syntax highlighting but that would require me to hard commit to vim which I do not know I am ready for.
+
+alright, im out for now, lets save this
