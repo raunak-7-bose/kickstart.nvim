@@ -202,8 +202,10 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_altv = 1
 vim.g.netrw_liststyle = 0
 
+vim.opt.termguicolors = true
+
 if vim.g.neovide then
-  vim.o.guifont = 'CaskaydiaCove Nerd Font:h20'
+  vim.o.guifont = 'OpendyslexicM Nerd Font:h13'
 
   vim.g.neovide_hide_mouse_when_typing = true
 
