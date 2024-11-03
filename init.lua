@@ -113,9 +113,7 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
-end)
+vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -211,8 +209,34 @@ if vim.g.neovide then
 
   vim.g.neovide_hide_mouse_when_typing = true
 
-  vim.g.neovide_theme = 'auto'
+  vim.g.neovide_theme = 'catppuccin'
 end
+
+--for paste buffer if wsl is in use
+local function is_wsl()
+  local version_file = io.open('/proc/version', 'rb')
+  if version_file ~= nil and string.find(version_file:read '*a', 'microsoft') then
+    version_file:close()
+    return true
+  end
+  return false
+end
+
+if is_wsl() then
+  vim.g.clipboard = {
+    name = 'WslClipboard',
+    copy = {
+      ['+'] = 'clip.exe',
+      ['*'] = 'clip.exe',
+    },
+    paste = {
+      ['+'] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ['*'] = 'powershell.exe -NoLogo -NoProfile -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+    cache_enabled = 0,
+  }
+end
+-- end wsl code
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
